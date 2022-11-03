@@ -120,8 +120,18 @@ public class Blogg {
 
 	public boolean leggTilUtvid(Innlegg innlegg) {
 
-		throw new UnsupportedOperationException(TODO.method());
-
+		if(nesteLedig == this.innlegg.length-1) {
+			utvid();
+		}
+		
+		if(finnes(innlegg) == false && ledigPlass() == true){
+			
+			this.innlegg[nesteLedig] = innlegg;
+			return true;
+			
+		}
+		
+		return false;
 	}
 
 	public boolean slett(Innlegg innlegg) {
