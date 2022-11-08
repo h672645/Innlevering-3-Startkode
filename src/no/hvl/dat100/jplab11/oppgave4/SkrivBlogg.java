@@ -11,19 +11,24 @@ public class SkrivBlogg {
 
 	public static boolean skriv(Blogg samling, String mappe, String filnavn) throws Exception {
 
-		PrintWriter skriver = new PrintWriter(filnavn, mappe);
-		
-		try{
-			skriver.print(samling.toString());
-			
-			skriver.close();
-		} catch(Exception e) {
-			e.getStackTrace();
-		}
-		
 		
 
-		return true;
+		try {
+			File fil = new File(filnavn);
+			PrintWriter skriver = new PrintWriter(fil);
+			
+			skriver.println(samling.toString());
+			skriver.println("test test");
+
+			skriver.close();
+
+			return true;
+
+		} catch (Exception e) {
+
+			e.getStackTrace();
+			return false;
+		}
 
 	}
 }
