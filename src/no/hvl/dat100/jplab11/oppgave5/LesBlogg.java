@@ -21,8 +21,34 @@ public class LesBlogg {
 	private static String BILDE = "BILDE";
 
 	public static Blogg les(String mappe, String filnavn) {
-
-		throw new UnsupportedOperationException(TODO.method());
-
-	}
+		
+		Blogg samling = new Blogg();
+		
+		try {
+		File fil = new File(filnavn);
+		Scanner leser;
+		
+			leser = new Scanner(fil);
+		
+		int linjeNr = 1;
+		String linje;
+		
+		
+		if (leser.hasNext(TEKST)) {
+			System.out.print(leser.hasNextLine());
+				
+		} else if (leser.hasNext(BILDE)){
+			System.out.print(leser.hasNextLine());
+		}
+		
+		
+		leser.close();
+		
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return samling;
+		
+		}
 }

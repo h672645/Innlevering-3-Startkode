@@ -18,7 +18,6 @@ public class SkrivBlogg {
 			PrintWriter skriver = new PrintWriter(fil);
 			
 			skriver.println(samling.toString());
-			skriver.println("test test");
 
 			skriver.close();
 
