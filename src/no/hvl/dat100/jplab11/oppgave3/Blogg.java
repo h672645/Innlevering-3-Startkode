@@ -141,6 +141,7 @@ public class Blogg {
 		if(plass >=0) {
 			nesteLedig--;
 			this.innlegg[plass] = this.innlegg[nesteLedig];
+				
 			this.innlegg[nesteLedig] = null;
 			return true;
 		} else {
